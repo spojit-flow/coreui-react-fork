@@ -151,14 +151,16 @@ export const CSmartTableHead = forwardRef<HTMLTableSectionElement, CSmartTableHe
                 style={getTableHeaderCellStyles(column, columnSorter)}
                 key={index}
               >
-                <div className="d-inline">{getColumnLabel(column)}</div>
-                {columnSorter &&
-                  (typeof column === 'object'
-                    ? (column.sorter === undefined
-                      ? true
-                      : column.sorter)
-                    : true) &&
-                  columnSorterIcon(column)}
+                <div class="d-flex align-content-center thdr-wrap">
+                  <div className="d-inline">{getColumnLabel(column)}</div>
+                  {columnSorter &&
+                    (typeof column === 'object'
+                      ? (column.sorter === undefined
+                        ? true
+                        : column.sorter)
+                      : true) &&
+                    columnSorterIcon(column)}
+                </div>
               </CTableHeaderCell>
             )
           })}
