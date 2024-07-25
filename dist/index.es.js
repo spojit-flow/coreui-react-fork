@@ -13742,14 +13742,15 @@ var CSmartTableHead = forwardRef(function (_a, ref) {
             selectable && (React$1.createElement(CTableHeaderCell, null, selectAll && (React$1.createElement(CFormCheck, { checked: typeof selectedAll === 'boolean' ? selectedAll : false, indeterminate: selectedAll === 'indeterminate' ? true : false, onChange: function () { return handleSelectAllChecked && handleSelectAllChecked(); }, ref: selectAllcheckboxRef })))),
             _columns.map(function (column, index) {
                 return (React$1.createElement(CTableHeaderCell, __assign$1({}, getTableHeaderCellProps(column), { onClick: function () { return handleSort && handleSort(getColumnKey(column), index); }, style: getTableHeaderCellStyles(column, columnSorter), key: index }),
-                    React$1.createElement("div", { className: "d-inline" }, getColumnLabel(column)),
-                    columnSorter &&
-                        (typeof column === 'object'
-                            ? (column.sorter === undefined
-                                ? true
-                                : column.sorter)
-                            : true) &&
-                        columnSorterIcon(column)));
+                    React$1.createElement("div", { className: "d-flex align-content-center thdr-wrap" },
+                      React$1.createElement("div", { className: "d-inline" }, getColumnLabel(column)),
+                      columnSorter &&
+                          (typeof column === 'object'
+                              ? (column.sorter === undefined
+                                  ? true
+                                  : column.sorter)
+                              : true) &&
+                          columnSorterIcon(column))));
             })),
         columnFilter && (React$1.createElement(CTableRow, null,
             selectable && React$1.createElement(CTableHeaderCell, null),
